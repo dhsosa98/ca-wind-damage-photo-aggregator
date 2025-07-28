@@ -20,7 +20,7 @@ class DamageAggregator:
         """Initialize aggregator with configuration"""
         self.confirmation_threshold = 2  # Minimum photos for damage confirmation
         self.severity_threshold = DamageSeverity.MODERATE  # Minimum severity for confirmation
-        self.critical_areas = {DamageArea.ROOF, DamageArea.SIDING}
+        self.critical_areas = {DamageArea.ROOF, DamageArea.ATTIC, DamageArea.SIDING, DamageArea.GARAGE, DamageArea.WINDOWS, DamageArea.GUTTERS}
         self.max_representative_images = 3
     
     def aggregate_damage_by_area(self, damage_results: DamageResult) -> List[DamageAreaInfo]:
