@@ -79,7 +79,7 @@ make ecr-url
 
 ## Assumptions
 - Image URLs are publicly accessible
-- Damage detection is done using Google Gemini 2.5 Flash model using a custom prompt and a structured output schema
+- Damage detection is performed using the Google Gemini 2.5 Flash model with a custom prompt and a structured output schema. The model identifies damage types: `damage`, `broken`, `cracked`, `torn`, `missing`, `debris`, `destruction`, `wreckage`, and `ruins`. Detected locations are: `roof`, `attic`, `siding`, `garage`, `windows`, `gutters`, and `unknown` (as reflected in the test dataset and schema).
 - Quality scoring combines blur (Laplacian variance), brightness, contrast, and image size:
     - Blur: Laplacian variance (higher = less blurry)
     - Brightness: average value in HSV space (optimal near 128)
