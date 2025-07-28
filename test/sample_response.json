@@ -1,0 +1,65 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "claim_id": "CLM-2025-00123",
+    "source_images": {
+      "total": 57,
+      "analyzed": 57,
+      "discarded_low_quality": 0,
+      "clusters": 57
+    },
+    "overall_damage_severity": 1.8,
+    "areas": [
+      {
+        "area": "roof",
+        "damage_confirmed": true,
+        "primary_peril": "wind",
+        "count": 24,
+        "avg_severity": 1.8,
+        "representative_images": [
+          "https://ca-wa-public-images.s3.us-east-1.amazonaws.com/83-lin-tong-5032-photos-04-02-2025-002418/item_d974d891-b902-4b4c-9a30-b6dfbec414f6.jpg",
+          "https://ca-wa-public-images.s3.us-east-1.amazonaws.com/83-lin-tong-5032-photos-04-02-2025-002418/item_32640a67-a857-41e2-b8bf-aa1e2bde3248.jpg",
+          "https://ca-wa-public-images.s3.us-east-1.amazonaws.com/83-lin-tong-5032-photos-04-02-2025-002418/item_ed1911f7-232f-4eb2-bb35-83f1daf2e48a.jpg"
+        ],
+        "notes": "Uplifted and displaced shingles visible on the roof section above the main entrance.; Missing and torn fascia/soffit at the corner of the roofline, exposing underlying wood structure. This damage is consistent with wind uplift.; Significant wind damage to the roof eave, including missing fascia board and dislodged soffit panels. The roof edge appears compromised, indicating potential shingle or flashing uplift.; A section of the fascia or soffit appears to be missing or displaced at the corner of the roofline where it meets the screen enclosure. This is consistent with minor wind damage.; A white object, likely a tarp, is visible on the roof, suggesting underlying damage. No other visible wind damage to siding, windows, or gutters.; Shingle uplift and disturbance are visible on various sections of the roof, particularly along the ridge and in some field areas. This is consistent with wind damage. The presence of boarded-up windows on a nearby house suggests a recent significant weather event in the area, supporting the likelihood of wind damage.; A significant section of roof shingles is missing along a ridge/hip line, exposing the underlayment. Some roof vents appear to be bent or displaced.; Uplifted, displaced, and missing ridge cap shingles along the roof ridge, exposing underlying material.; Visible uplifted and displaced asphalt shingles across multiple areas of the roof. Granule loss is apparent. A sealant line suggests previous repair attempts. Surrounding trees show signs of wind damage.; Visible crack marked with chalk across multiple roof shingles. This type of damage can be caused by wind stress, though other factors are possible.; Multiple asphalt shingles on the roof show signs of uplift and creasing, consistent with wind damage. Some areas are marked with chalk.; Visible granule loss and potential minor shingle damage on the roof, indicated by chalk marks. No major structural issues are apparent.; A zig-zag tear is visible across multiple roof shingles, marked with chalk. While tearing can be wind-related, the specific pattern does not definitively indicate wind uplift or blow-off, and could be due to stress or impact.; Visible granule loss and indentations on shingles, marked with chalk. The damage pattern is more consistent with hail impact than typical wind uplift or tearing, making wind as the sole cause uncertain.; Uplifted and displaced ridge cap shingles are visible along the roof ridge, indicating wind damage. The surrounding environment, including trees and other properties with boarded windows, suggests recent storm activity.; Visible signs of shingle lifting/separation and granule loss on the roof, particularly within the chalked area. This indicates potential wind damage or age-related wear exacerbated by wind, which could lead to water intrusion.; Missing and torn shingles observed on the roof surface. A circular chalk mark indicates a specific area of missing shingles. Another area shows a linear pattern of shingle damage.; Shingles appear uplifted and creased along a path marked by yellow chalk, consistent with wind damage.; Localized area of missing roof shingles, exposing the underlayment, highlighted by chalk marks.; Ridge cap shingles are uplifted, torn, and potentially missing along the entire ridge line, indicating wind uplift damage. Chalk marks highlight the damaged area.; A small, dark object or mark is visible on a shingle, outlined by a yellow chalk mark. The surrounding shingles appear intact with no signs of uplift or displacement. This appears to be a very minor surface anomaly or small piece of debris.; Multiple roof shingles show signs of uplift and creasing, consistent with wind damage. White chalk marks are present, indicating specific areas of concern or prior inspection.; Localized area of granule loss or minor impact mark on a single asphalt shingle, highlighted by chalk. While not clear uplift or tear damage, it could be consistent with impact from wind-blown debris.; Torn screen material at the top of the screen enclosure, consistent with wind uplift or tearing. The white downspout on the right side of the enclosure also appears bent and possibly detached from the structure."
+      },
+      {
+        "area": "gutters",
+        "damage_confirmed": true,
+        "primary_peril": "wind",
+        "count": 4,
+        "avg_severity": 2,
+        "representative_images": [
+          "https://ca-wa-public-images.s3.us-east-1.amazonaws.com/83-lin-tong-5032-photos-04-02-2025-002418/item_16546c09-d8fb-4785-8b3b-8702207bba4c.jpg",
+          "https://ca-wa-public-images.s3.us-east-1.amazonaws.com/83-lin-tong-5032-photos-04-02-2025-002418/item_c66a208b-21e2-4925-8019-c1efed769dc6.jpg",
+          "https://ca-wa-public-images.s3.us-east-1.amazonaws.com/83-lin-tong-5032-photos-04-02-2025-002418/item_e243de77-77e7-4fc2-8732-4674622fdc17.jpg"
+        ],
+        "notes": "The downspout is detached from the main gutter system and is hanging freely. No other significant wind damage observed on the house or screen enclosure. Some loose shingle pieces are on the ground, but the roof appears intact.; The downspout on the left side of the house appears to be detached and bent outwards from the wall near the top, indicating wind damage. No other significant wind damage is visible on the building or property.; The downspout shows clear dents and deformation, likely caused by impact from wind-blown debris.; The downspout is detached and bent. There are also asphalt shingles and dried leaves on the ground, indicating wind-blown debris and potential roof damage."
+      },
+      {
+        "area": "siding",
+        "damage_confirmed": false,
+        "primary_peril": "wind",
+        "count": 2,
+        "avg_severity": 1,
+        "representative_images": [
+          "https://ca-wa-public-images.s3.us-east-1.amazonaws.com/83-lin-tong-5032-photos-04-02-2025-002418/item_b0c8c96d-d39b-46e4-8050-97553e1efc97.jpg",
+          "https://ca-wa-public-images.s3.us-east-1.amazonaws.com/83-lin-tong-5032-photos-04-02-2025-002418/item_2ce0dbd5-0932-433d-9e7b-933ab0900e72.jpg"
+        ],
+        "notes": "Two small, isolated holes are visible in the stucco/siding. While these represent minor damage to the exterior, it is unclear if they were caused by wind-borne debris or other factors.; Soffit panels show a gap with exposed fasteners near the gutter line, indicating minor damage."
+      }
+    ],
+    "data_gaps": [
+      "No attic photos",
+      "No garage photos",
+      "No windows photos",
+      "Unconfirmed siding damage (severity too low)"
+    ],
+    "confidence": 0.58,
+    "generated_at": "2025-07-28T10:02:58.277208+00:00",
+    "correlation_id": "80aafb8a-ebc4-4ddb-8ba8-ea96dfb74551"
+  }
+}
