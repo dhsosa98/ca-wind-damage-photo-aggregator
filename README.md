@@ -17,14 +17,21 @@ AWS Lambda microservice that analyzes exterior damage photos and returns a claim
 - Python 3.11+
 
 ## Quick Start
-First, export the environment variables in your shell
 
-Example:
+### 1. Configure AWS CLI
+
+For more information, see [AWS CLI Configuration](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+
+```bash
+aws configure
+```
+
+### 2. Export Environment Variables
 ```bash
 export GOOGLE_API_KEY=your-google-api-key
 ```
 
-Then, run the following commands:
+### 3. Run the following commands:
 
 ```bash
 # Deploy (builds Docker image and deploys infrastructure)
@@ -62,9 +69,6 @@ make endpoint
 ```bash
 # Build image locally
 make docker-build
-
-# Test locally
-make docker-test
 
 # Push to ECR
 make docker-push
