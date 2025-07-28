@@ -90,6 +90,14 @@ make ecr-url
 - Deduplication uses perceptual hashing
 - Max representative images per area is 3
 - The notes field is concatenated from the notes field of the damage analysis results
+- Confidence scoring is based on a weighted combination of average image quality, coverage of unique damage areas, consistency of damage detection across images, and the average confidence of the AI model's predictions. The formula is:
+    - `final_confidence = avg_quality * 0.3 + coverage_factor * 0.2 + consistency_factor * 0.2 + avg_confidence * 0.3`
+    - Where:
+        - `avg_quality` is the mean quality score of analyzed images
+        - `coverage_factor` is the number of unique areas with detected damage, normalized to a maximum of 3
+        - `consistency_factor` is the ratio of images with detected damage to total analyzed images (or 0.5 if no damage detected)
+        - `avg_confidence` is the mean confidence score from the AI model
+    - The final confidence score is rounded to two decimal places and ranges from 0.0 to 1.0
 - Container deployment for better dependency management
 
 
@@ -132,9 +140,3 @@ make ecr-url
 - **API Gateway Availability**: The API Gateway currently returns a 503 Service Unavailable or times out.
     - The endpoint works correctly when invoked locally or directly via Lambda test events, but not through the API Gateway.
     - Potential solutions include increasing the API Gateway and Lambda timeouts, and consulting AWS Support for further troubleshooting.
-
-## Development
-```bash
-# Clean up
-make clean
-``` 
