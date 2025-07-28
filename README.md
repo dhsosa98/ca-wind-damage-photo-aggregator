@@ -106,7 +106,6 @@ make ecr-url
 ### Infrastructure Decisions
 - **Terraform IaC**: Single stack deployment for reproducibility and version control
 - **Container Deployment**: Better dependency isolation and runtime consistency
-- **API Gateway**: HTTP API for simplified integration and cost optimization
 - **Error Handling**: Comprehensive logging with correlation IDs for debugging
 
 ### Performance Optimizations
@@ -114,6 +113,12 @@ make ecr-url
 - **Batch Operations**: Efficient handling of multiple images per request
 - **Memory Management**: Optimized image processing to handle large files
 - **Timeout Configuration**: 15-minute Lambda timeout for complex analysis tasks
+
+### Outstanding Issues
+
+- **API Gateway Availability**: The API Gateway currently returns a 503 Service Unavailable or times out.
+    - The endpoint works correctly when invoked locally or directly via Lambda test events, but not through the API Gateway.
+    - Potential solutions include increasing the API Gateway and Lambda timeouts, and consulting AWS Support for further troubleshooting.
 
 ## Development
 ```bash
