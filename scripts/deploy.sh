@@ -30,23 +30,32 @@ echo "AWS Region: $AWS_REGION"
 
 # Build Docker image
 echo "Building Docker image..."
-docker build -t $ECR_REPO:$IMAGE_TAG .
+DOCKER_BUILDKIT=0 docker build -t $ECR_REPO:$IMAGE_TAG .
 
 # Login to ECR
 echo "Logging in to ECR..."
 aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
 
-# Deploy infrastructure first (this will create the ECR repository)
-echo "Deploying infrastructure with Terraform..."
-cd iac
-terraform init
-terraform apply -auto-approve -var="gemini_api_key=$GEMINI_API_KEY"
-cd ..
+# Check if ECR repository exists, if not, create it with Terraform
+ECR_EXISTS=$(aws ecr describe-repositories --repository-names "$ECR_REPO" --region "$AWS_REGION" 2>/dev/null || echo "notfound")
+if [[ "$ECR_EXISTS" == "notfound" ]]; then
+  echo "ECR repository '$ECR_REPO' does not exist. Creating with Terraform..."
+  terraform -chdir=iac init
+  terraform -chdir=iac apply -auto-approve -target=aws_ecr_repository.lambda -var="gemini_api_key=$GEMINI_API_KEY"
+else
+  echo "ECR repository '$ECR_REPO' already exists."
+fi
 
 # Tag and push image (after ECR repository is created by Terraform)
 echo "Pushing Docker image to ECR..."
 docker tag $ECR_REPO:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG
 docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG
+
+echo "Deploying infrastructure with Terraform..."
+cd iac
+terraform init
+terraform apply -auto-approve -var="gemini_api_key=$GEMINI_API_KEY"
+cd ..
 
 # Get API endpoint
 echo "Getting API endpoint..."
