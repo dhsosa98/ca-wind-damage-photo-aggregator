@@ -1,6 +1,6 @@
 # Wind-Damage Photo Aggregator - Makefile
 
-.PHONY: deploy destroy test clean build push docker-build docker-push setup
+.PHONY: deploy destroy clean build push docker-build docker-push setup
 
 # Get AWS account ID and region
 AWS_ACCOUNT_ID := $(shell aws sts get-caller-identity --query Account --output text)
@@ -48,11 +48,6 @@ destroy:
 	cd iac && terraform destroy -auto-approve
 	@echo "Infrastructure destroyed!"
 
-# Run tests
-test:
-	@echo "Running tests..."
-	python -m pytest test/ -v
-
 # Clean up temporary files
 clean:
 	@echo "Cleaning up..."
@@ -66,13 +61,6 @@ clean:
 endpoint:
 	@echo "Getting API endpoint..."
 	cd iac && terraform output -raw api_endpoint
-
-# Local Docker test
-docker-test:
-	@echo "Testing Docker image locally..."
-	docker run -p 9000:8080 -e AWS_LAMBDA_FUNCTION_TIMEOUT=900 -e AWS_LAMBDA_FUNCTION_MEMORY_SIZE=2048 $(ECR_REPO):$(IMAGE_TAG) &
-	@echo "Container started on port 9000 with 15-minute timeout"
-	@echo "Test with: curl -XPOST http://localhost:9000/2015-03-31/functions/function/invocations -d '{}'"
 
 # Show ECR repository URL
 ecr-url:
