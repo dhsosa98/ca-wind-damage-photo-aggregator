@@ -1,0 +1,25 @@
+# Wind-Damage Photo Aggregator - Lambda Container
+# Multi-stage build for optimized Lambda deployment
+
+# Build stage
+FROM public.ecr.aws/lambda/python:3.11 as builder
+
+# Copy requirements and install dependencies
+COPY src/requirements.txt .
+RUN pip install -r requirements.txt --target "${LAMBDA_TASK_ROOT}"
+
+# Copy source code
+COPY src/ ${LAMBDA_TASK_ROOT}/
+
+# Runtime stage
+FROM public.ecr.aws/lambda/python:3.11
+
+# Copy dependencies from builder stage
+COPY --from=builder ${LAMBDA_TASK_ROOT} ${LAMBDA_TASK_ROOT}
+
+# Set environment variables
+ENV PYTHONPATH=${LAMBDA_TASK_ROOT}
+ENV PYTHONUNBUFFERED=1
+
+# Set the CMD to your handler
+CMD ["app.lambda_handler"]

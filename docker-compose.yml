@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  wind-damage-aggregator:
+    build: 
+      context: .
+      dockerfile: Dockerfile.local
+    ports:
+      - "9000:8080"
+    env_file:
+      - .env
+    environment:
+      - AWS_LAMBDA_FUNCTION_TIMEOUT=900
+      - AWS_LAMBDA_FUNCTION_MEMORY_SIZE=2048
+    volumes:
+      - ./src:/var/task/src
+    command: ["app.lambda_handler"]
