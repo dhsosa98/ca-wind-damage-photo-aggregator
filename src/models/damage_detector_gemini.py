@@ -3,7 +3,7 @@ import logging
 from langchain_google_genai import ChatGoogleGenerativeAI
 from typing import List, Literal, Tuple
 from pydantic import BaseModel, Field, field_validator
-from src.schemas import DamageAnalysis, DamageArea, DamageSeverity, DamageIndicator
+from schemas import DamageAnalysis, DamageArea, DamageSeverity, DamageIndicator
 import traceback
 import asyncio
 

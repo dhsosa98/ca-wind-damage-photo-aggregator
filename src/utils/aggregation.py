@@ -6,7 +6,7 @@ Handles damage aggregation, severity calculation, and data gap analysis
 from typing import List, Dict
 from collections import defaultdict
 
-from src.schemas import (
+from schemas import (
     DamageAnalysis, DamageAreaInfo, DamageArea, DamageSeverity,
     DamageResult
 )

@@ -7,7 +7,7 @@ import asyncio
 import aiohttp
 import logging
 from typing import List, Optional
-from src.schemas import ImageTuple, BatchProcessingResult
+from schemas import ImageTuple, BatchProcessingResult
 
 logger = logging.getLogger(__name__)
 

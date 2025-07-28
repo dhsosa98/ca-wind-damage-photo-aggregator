@@ -6,7 +6,7 @@ import logging
 import json
 import sys
 from datetime import datetime, timezone
-from src.schemas import LogContext, PerformanceMetric
+from schemas import LogContext, PerformanceMetric
 
 class JSONFormatter(logging.Formatter):
     """

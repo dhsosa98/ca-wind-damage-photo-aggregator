@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 import logging
 from typing import List, Tuple
-from src.schemas import ImageTuple
+from schemas import ImageTuple
 import asyncio
 
 logger = logging.getLogger(__name__)
