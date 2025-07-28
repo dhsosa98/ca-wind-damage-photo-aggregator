@@ -1,6 +1,6 @@
 # Wind-Damage Photo Aggregator - Makefile
 
-.PHONY: deploy destroy clean build push docker-build docker-push setup
+.PHONY: deploy destroy clean build push docker-build docker-push
 
 # Get AWS account ID and region
 AWS_ACCOUNT_ID := $(shell aws sts get-caller-identity --query Account --output text)
@@ -8,10 +8,6 @@ AWS_REGION := $(shell aws configure get region)
 ECR_REPO := wind-damage-aggregator
 IMAGE_TAG := latest
 
-# Setup environment
-setup:
-	@echo "Running setup script..."
-	./scripts/setup.sh
 
 # Build Docker image
 docker-build:

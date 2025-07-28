@@ -17,6 +17,15 @@ AWS Lambda microservice that analyzes exterior damage photos and returns a claim
 - Python 3.11+
 
 ## Quick Start
+First, export the environment variables in your shell
+
+Example:
+```bash
+export GOOGLE_API_KEY=your-google-api-key
+```
+
+Then, run the following commands:
+
 ```bash
 # Deploy (builds Docker image and deploys infrastructure)
 make deploy
@@ -122,12 +131,6 @@ make ecr-url
 
 ## Development
 ```bash
-# Run tests
-make test
-
-# Load testing
-make load-test
-
 # Clean up
 make clean
 ``` 
